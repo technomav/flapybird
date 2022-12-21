@@ -151,7 +151,7 @@ class Base:
 		win.blit(self.IMG, (self.x2, self.y))
 
 
-def draw_window(win, bird, pipes, base, score):
+def draw_window(win, birds, pipes, base, score):
 	win.blit(BG_IMG, (0, 0))
 
 	for pipe in pipes:
@@ -198,7 +198,7 @@ def main(genome, config):
 		#bird.move()
 		pipe_ind = 0
 		if len(birds) > 0:
-			if len(pipes) > 1 and bird[0].x > pipes[0].x + pipe[0].PIPE_TOP.get_width():
+			if len(pipes) > 1 and birds[0].x > pipes[0].x + pipes[0].PIPE_TOP.get_width():
 				pipe_ind = 1
 		else:
 			run = False
